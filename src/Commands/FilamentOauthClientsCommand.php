@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace ChrisReedIO\FilamentOAuthClients\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class FilamentOauthClientsCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'filament-oauth-clients';
 
     public $description = 'My command';
 
