@@ -101,8 +101,8 @@ class FilamentOauthClientsServiceProvider extends PackageServiceProvider
     {
         return [
             // AlpineComponent::make('filament-oauth-clients', __DIR__ . '/../resources/dist/components/filament-oauth-clients.js'),
-            Css::make('filament-oauth-clients-styles', __DIR__ . '/../resources/dist/filament-oauth-clients.css'),
-            Js::make('filament-oauth-clients-scripts', __DIR__ . '/../resources/dist/filament-oauth-clients.js'),
+            // Css::make('filament-oauth-clients-styles', __DIR__ . '/../resources/dist/filament-oauth-clients.css'),
+            // Js::make('filament-oauth-clients-scripts', __DIR__ . '/../resources/dist/filament-oauth-clients.js'),
         ];
     }
 
