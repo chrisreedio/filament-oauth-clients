@@ -2,6 +2,8 @@
 
 namespace ChrisReedIO\FilamentOauthClients;
 
+use ChrisReedIO\FilamentOAuthClients\Commands\FilamentOauthClientsCommand;
+use ChrisReedIO\FilamentOAuthClients\Testing\TestsFilamentOauthClients;
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
@@ -13,8 +15,6 @@ use Livewire\Features\SupportTesting\Testable;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use ChrisReedIO\FilamentOAuthClients\Commands\FilamentOauthClientsCommand;
-use ChrisReedIO\FilamentOAuthClients\Testing\TestsFilamentOauthClients;
 
 class FilamentOauthClientsServiceProvider extends PackageServiceProvider
 {
