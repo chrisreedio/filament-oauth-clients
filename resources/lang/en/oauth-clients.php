@@ -1,6 +1,6 @@
 <?php
 
-// translations for ChrisReedIO/FilamentOauthClients
+// translations for ChrisReedIO/FilamentOAuthClients
 return [
     //
 ];

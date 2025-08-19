@@ -1,5 +1,5 @@
 <?php
 
-namespace ChrisReedIO\FilamentOauthClients;
+namespace ChrisReedIO\FilamentOAuthClients;
 
-class FilamentOauthClients {}
+class FilamentOAuthClients {}

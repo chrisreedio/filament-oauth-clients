@@ -1,6 +1,6 @@
 <?php
 
-// config for ChrisReedIO/FilamentOauthClients
+// config for ChrisReedIO/FilamentOAuthClients
 return [
 
 ];

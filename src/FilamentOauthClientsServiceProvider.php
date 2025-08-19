@@ -1,9 +1,9 @@
 <?php
 
-namespace ChrisReedIO\FilamentOauthClients;
+namespace ChrisReedIO\FilamentOAuthClients;
 
-use ChrisReedIO\FilamentOAuthClients\Commands\FilamentOauthClientsCommand;
-use ChrisReedIO\FilamentOAuthClients\Testing\TestsFilamentOauthClients;
+use ChrisReedIO\FilamentOAuthClients\Commands\FilamentOAuthClientsCommand;
+use ChrisReedIO\FilamentOAuthClients\Testing\TestsFilamentOAuthClients;
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Assets\Asset;
 use Filament\Support\Assets\Css;
@@ -16,7 +16,7 @@ use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class FilamentOauthClientsServiceProvider extends PackageServiceProvider
+class FilamentOAuthClientsServiceProvider extends PackageServiceProvider
 {
     public static string $name = 'filament-oauth-clients';
 
@@ -86,7 +86,7 @@ class FilamentOauthClientsServiceProvider extends PackageServiceProvider
         }
 
         // Testing
-        Testable::mixin(new TestsFilamentOauthClients);
+        Testable::mixin(new TestsFilamentOAuthClients);
     }
 
     protected function getAssetPackageName(): ?string
@@ -112,7 +112,7 @@ class FilamentOauthClientsServiceProvider extends PackageServiceProvider
     protected function getCommands(): array
     {
         return [
-            FilamentOauthClientsCommand::class,
+            FilamentOAuthClientsCommand::class,
         ];
     }
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace ChrisReedIO\FilamentOauthClients;
+namespace ChrisReedIO\FilamentOAuthClients;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
-class FilamentOauthClientsPlugin implements Plugin
+class FilamentOAuthClientsPlugin implements Plugin
 {
     public function getId(): string
     {

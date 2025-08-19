@@ -4,7 +4,7 @@ namespace ChrisReedIO\FilamentOAuthClients\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
-use ChrisReedIO\FilamentOAuthClients\FilamentOauthClientsServiceProvider;
+use ChrisReedIO\FilamentOAuthClients\FilamentOAuthClientsServiceProvider;
 use Filament\Actions\ActionsServiceProvider;
 use Filament\FilamentServiceProvider;
 use Filament\Forms\FormsServiceProvider;
@@ -44,7 +44,7 @@ class TestCase extends Orchestra
             SupportServiceProvider::class,
             TablesServiceProvider::class,
             WidgetsServiceProvider::class,
-            FilamentOauthClientsServiceProvider::class,
+            FilamentOAuthClientsServiceProvider::class,
         ];
     }
 

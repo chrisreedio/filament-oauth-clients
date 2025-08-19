@@ -4,7 +4,7 @@ namespace ChrisReedIO\FilamentOAuthClients\Commands;
 
 use Illuminate\Console\Command;
 
-class FilamentOauthClientsCommand extends Command
+class FilamentOAuthClientsCommand extends Command
 {
     public $signature = 'filament-oauth-clients';
 
