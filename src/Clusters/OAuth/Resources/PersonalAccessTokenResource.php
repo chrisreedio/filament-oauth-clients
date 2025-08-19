@@ -1,0 +1,81 @@
+<?php
+
+namespace ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources;
+
+use App\Models\PersonalAccessToken;
+use ChrisReedIO\FilamentOAuthClients\Clusters\OAuth;
+use ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\PersonalAccessTokenResource\Pages;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
+
+class PersonalAccessTokenResource extends Resource
+{
+    protected static ?string $model = PersonalAccessToken::class;
+
+    protected static ?string $navigationIcon = 'heroicon-o-user';
+
+    protected static ?string $cluster = OAuth::class;
+
+    public static function form(Form $form): Form
+    {
+        return $form
+            ->columns(1)
+            ->schema([
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                // Forms\Components\TextInput::make('scopes')
+                // ->required()
+                // ->maxLength(255),
+            ]);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->description('Personal Access Tokens are used to authenticate developers to the API.')
+            ->columns([
+                Tables\Columns\TextColumn::make('name'),
+                // Tables\Columns\TextColumn::make('client.name'),
+                // Tables\Columns\TextColumn::make('user.name'),
+                // Tables\Columns\TextColumn::make('scopes'),
+                Tables\Columns\TextColumn::make('expires_at')
+                    ->dateTime('F jS, Y g:i A T')
+                    ->sortable(),
+                Tables\Columns\IconColumn::make('revoked')
+                    ->boolean(),
+            ])
+            ->filters([
+                //
+            ])
+            ->actions([
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\EditAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => Pages\ListPersonalAccessTokens::route('/'),
+            // 'create' => Pages\CreatePersonalAccessToken::route('/create'),
+            'view' => Pages\ViewPersonalAccessToken::route('/{record}'),
+            'edit' => Pages\EditPersonalAccessToken::route('/{record}/edit'),
+        ];
+    }
+}
