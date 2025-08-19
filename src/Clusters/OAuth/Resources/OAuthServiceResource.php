@@ -13,7 +13,6 @@ use Filament\Actions\EditAction;
 use Filament\Forms;
 use Filament\Infolists;
 use Filament\Resources\Resource;
-use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -41,28 +40,26 @@ class OAuthServiceResource extends Resource
     public static function infolist(Schema $infolist): Schema
     {
         return $infolist
+            ->columns(4)
             ->components([
                 Infolists\Components\TextEntry::make('id')
                     ->copyable()
                     ->badge()
                     ->label('ID'),
-                Infolists\Components\TextEntry::make('secret')
-                    ->label('Secret')
-                    // ->formatStateUsing(fn (string $state) => Str::mask($state, '*', 0, 10))
-                    ->formatStateUsing(fn (string $state) => '********')
-                    ->copyable(),
-                Grid::make(3)
-                    ->schema([
-                        // Infolists\Components\TextEntry::make('name'),
-                        Infolists\Components\TextEntry::make('revoked')
-                            ->label('Revoked')
-                            ->formatStateUsing(fn (bool $state) => $state ? 'Yes' : 'No')
-                            ->color(fn (bool $state) => $state ? 'danger' : 'success'),
-                        Infolists\Components\TextEntry::make('created_at')
-                            ->label('Created At')
-                            ->dateTime('F jS, Y g:i A T'),
-                        Infolists\Components\TextEntry::make('updated_at'),
-                    ]),
+                // Infolists\Components\TextEntry::make('secret')
+                //     ->label('Secret')
+                //     // ->formatStateUsing(fn (string $state) => Str::mask($state, '*', 0, 10))
+                //     ->formatStateUsing(fn (string $state) => '********')
+                //     ->copyable(),
+                // Infolists\Components\TextEntry::make('name'),
+                Infolists\Components\TextEntry::make('revoked')
+                    ->label('Revoked')
+                    ->formatStateUsing(fn (bool $state) => $state ? 'Yes' : 'No')
+                    ->color(fn (bool $state) => $state ? 'danger' : 'success'),
+                Infolists\Components\TextEntry::make('created_at')
+                    ->label('Created At')
+                    ->dateTime('F jS, Y g:i A T'),
+                Infolists\Components\TextEntry::make('updated_at'),
             ]);
     }
 

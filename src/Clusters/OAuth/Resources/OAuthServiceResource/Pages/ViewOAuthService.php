@@ -5,7 +5,7 @@ namespace ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\OAuthService
 use ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\OAuthServiceResource;
 use ChrisReedIO\FilamentOAuthClients\Models\Traits\HasPageClipboard;
 use Filament\Actions;
-use Filament\Notifications\Actions\Action;
+use Filament\Actions\Action;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ViewRecord;
 

@@ -6,7 +6,7 @@ use ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\PersonalAccessToke
 use ChrisReedIO\FilamentOAuthClients\Models\PersonalAccessToken;
 use ChrisReedIO\FilamentOAuthClients\Models\Traits\HasPageClipboard;
 use Filament\Actions;
-use Filament\Notifications\Actions\Action;
+use Filament\Actions\Action;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Support\Enums\Width;
