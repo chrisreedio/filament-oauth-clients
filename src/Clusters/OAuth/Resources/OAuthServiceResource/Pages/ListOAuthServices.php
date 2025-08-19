@@ -2,22 +2,22 @@
 
 namespace ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\OAuthServiceResource\Pages;
 
-use App\Models\OAuthService;
 use ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\OAuthServiceResource;
+use ChrisReedIO\FilamentOAuthClients\Models\OAuthService;
 use Filament\Actions;
 use Filament\Notifications\Actions\Action;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ListRecords;
-use Filament\Support\Enums\MaxWidth;
+use Filament\Support\Enums\Width;
 use Illuminate\Database\Eloquent\Model;
 
 class ListOAuthServices extends ListRecords
 {
     protected static string $resource = OAuthServiceResource::class;
 
-    public function getMaxContentWidth(): MaxWidth
+    public function getMaxContentWidth(): Width
     {
-        return MaxWidth::Full;
+        return Width::Full;
     }
 
     protected function getHeaderActions(): array

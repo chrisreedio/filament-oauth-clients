@@ -3,7 +3,7 @@
 namespace ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\OAuthServiceResource\Pages;
 
 use ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\OAuthServiceResource;
-use ChrisReedIO\FilamentOAuthClients\Traits\HasPageClipboard;
+use ChrisReedIO\FilamentOAuthClients\Models\Traits\HasPageClipboard;
 use Filament\Actions;
 use Filament\Notifications\Actions\Action;
 use Filament\Notifications\Notification;

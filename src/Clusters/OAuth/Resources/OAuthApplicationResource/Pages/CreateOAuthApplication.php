@@ -4,6 +4,7 @@ namespace ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\OAuthApplica
 
 use ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\OAuthApplicationResource;
 use Filament\Resources\Pages\CreateRecord;
+use Filament\Support\Enums\Width;
 use Illuminate\Database\Eloquent\Model;
 
 class CreateOAuthApplication extends CreateRecord
@@ -12,7 +13,7 @@ class CreateOAuthApplication extends CreateRecord
 
     protected ?string $subheading = 'Create a new OAuth application that uses the Authorization Code grant type.';
 
-    protected ?string $maxContentWidth = '3xl';
+    protected Width | string | null $maxContentWidth = Width::ThreeExtraLarge;
 
     protected function handleRecordCreation(array $data): Model
     {

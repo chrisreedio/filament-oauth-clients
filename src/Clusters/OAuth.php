@@ -2,12 +2,13 @@
 
 namespace ChrisReedIO\FilamentOAuthClients\Clusters;
 
+use BackedEnum;
 use Filament\Clusters\Cluster;
-use Filament\Support\Enums\MaxWidth;
+use Filament\Support\Enums\Width;
 
 class OAuth extends Cluster
 {
-    protected static ?string $navigationIcon = 'heroicon-o-shield-check';
+    protected static BackedEnum | string | null $navigationIcon = 'heroicon-o-shield-check';
 
     protected static ?string $navigationLabel = 'OAuth';
 
@@ -15,8 +16,8 @@ class OAuth extends Cluster
 
     protected static ?string $slug = 'oauth';
 
-    public function getMaxContentWidth(): MaxWidth
+    public function getMaxContentWidth(): Width
     {
-        return MaxWidth::Full;
+        return Width::Full;
     }
 }

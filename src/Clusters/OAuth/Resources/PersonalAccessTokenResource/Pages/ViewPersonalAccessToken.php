@@ -3,7 +3,7 @@
 namespace ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\PersonalAccessTokenResource\Pages;
 
 use ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\PersonalAccessTokenResource;
-use ChrisReedIO\FilamentOAuthClients\Traits\HasPageClipboard;
+use ChrisReedIO\FilamentOAuthClients\Models\Traits\HasPageClipboard;
 use Filament\Actions;
 use Filament\Resources\Pages\ViewRecord;
 

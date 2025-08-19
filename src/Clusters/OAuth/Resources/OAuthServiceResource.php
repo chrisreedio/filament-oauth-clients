@@ -2,15 +2,19 @@
 
 namespace ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources;
 
-use App\Enums\OAuth\GrantType;
-use App\Models\OAuthService;
+use BackedEnum;
 use ChrisReedIO\FilamentOAuthClients\Clusters\OAuth;
 use ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\OAuthServiceResource\Pages;
+use ChrisReedIO\FilamentOAuthClients\Enums\OAuth\GrantType;
+use ChrisReedIO\FilamentOAuthClients\Models\OAuthService;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Infolists;
-use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -20,7 +24,7 @@ class OAuthServiceResource extends Resource
 {
     protected static ?string $model = OAuthService::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-cpu-chip';
+    protected static BackedEnum | string | null $navigationIcon = 'heroicon-o-cpu-chip';
 
     protected static ?string $navigationLabel = 'Services';
 
@@ -34,10 +38,10 @@ class OAuthServiceResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    public static function infolist(Infolist $infolist): Infolist
+    public static function infolist(Schema $infolist): Schema
     {
         return $infolist
-            ->schema([
+            ->components([
                 Infolists\Components\TextEntry::make('id')
                     ->copyable()
                     ->badge()
@@ -47,7 +51,7 @@ class OAuthServiceResource extends Resource
                     // ->formatStateUsing(fn (string $state) => Str::mask($state, '*', 0, 10))
                     ->formatStateUsing(fn (string $state) => '********')
                     ->copyable(),
-                Infolists\Components\Grid::make(3)
+                Grid::make(3)
                     ->schema([
                         // Infolists\Components\TextEntry::make('name'),
                         Infolists\Components\TextEntry::make('revoked')
@@ -62,11 +66,11 @@ class OAuthServiceResource extends Resource
             ]);
     }
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->columns(1)
-            ->schema([
+            ->components([
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
@@ -111,13 +115,13 @@ class OAuthServiceResource extends Resource
             ->filters([
                 //
             ])
-            ->actions([
+            ->recordActions([
                 // Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ]);
     }

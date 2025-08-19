@@ -5,15 +5,15 @@ namespace ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\OAuthApplica
 use ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\OAuthApplicationResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use Filament\Support\Enums\MaxWidth;
+use Filament\Support\Enums\Width;
 
 class ListOAuthApplications extends ListRecords
 {
     protected static string $resource = OAuthApplicationResource::class;
 
-    public function getMaxContentWidth(): MaxWidth
+    public function getMaxContentWidth(): Width
     {
-        return MaxWidth::Full;
+        return Width::Full;
     }
 
     protected function getHeaderActions(): array

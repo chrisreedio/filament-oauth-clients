@@ -2,14 +2,14 @@
 
 namespace ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\PersonalAccessTokenResource\Pages;
 
-use App\Models\PersonalAccessToken;
 use ChrisReedIO\FilamentOAuthClients\Clusters\OAuth\Resources\PersonalAccessTokenResource;
-use ChrisReedIO\FilamentOAuthClients\Traits\HasPageClipboard;
+use ChrisReedIO\FilamentOAuthClients\Models\PersonalAccessToken;
+use ChrisReedIO\FilamentOAuthClients\Models\Traits\HasPageClipboard;
 use Filament\Actions;
 use Filament\Notifications\Actions\Action;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\ListRecords;
-use Filament\Support\Enums\MaxWidth;
+use Filament\Support\Enums\Width;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,9 +21,9 @@ class ListPersonalAccessTokens extends ListRecords
 
     protected static string $resource = PersonalAccessTokenResource::class;
 
-    public function getMaxContentWidth(): MaxWidth
+    public function getMaxContentWidth(): Width
     {
-        return MaxWidth::Full;
+        return Width::Full;
     }
 
     protected function getHeaderActions(): array
