@@ -5,38 +5,24 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/chrisreedio/filament-oauth-clients/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/chrisreedio/filament-oauth-clients/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/chrisreedio/filament-oauth-clients.svg?style=flat-square)](https://packagist.org/packages/chrisreedio/filament-oauth-clients)
 
-A Filament plugin for managing OAuth 2.0 clients. This package provides a comprehensive interface for creating, configuring, and managing OAuth clients within your Filament admin panel.
+> **⚠️ Early Development**: This package is currently in active development. APIs may change before the stable release.
+
+A Filament plugin for managing OAuth 2.0 clients using Laravel Passport. Provides a clean admin interface for managing OAuth applications, services, and personal access tokens.
+
+## Features
+
+- Manage OAuth applications and services
+- Create and manage personal access tokens
+- Built-in support for Laravel Passport
+- Clean Filament admin interface with organized resource clustering
 
 ## Installation
-
-You can install the package via composer:
 
 ```bash
 composer require chrisreedio/filament-oauth-clients
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="filament-oauth-clients-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="filament-oauth-clients-config"
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="filament-oauth-clients-views"
-```
-
-## Usage
-
-Add the plugin to your Filament panel provider:
+Add the plugin to your Filament panel:
 
 ```php
 use ChrisReedIO\FilamentOAuthClients\FilamentOAuthClientsPlugin;
@@ -48,6 +34,13 @@ public function panel(Panel $panel): Panel
             FilamentOAuthClientsPlugin::make(),
         ]);
 }
+```
+
+## Requirements
+
+- PHP 8.3+
+- Laravel Passport
+- Filament v4
 
 ## Testing
 
