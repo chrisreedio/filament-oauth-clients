@@ -2,6 +2,14 @@
 
 All notable changes to `filament-oauth-clients` will be documented in this file.
 
+## v4.1.0 - 2026-02-09
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/chrisreedio/filament-oauth-clients/pull/5
+
+**Full Changelog**: https://github.com/chrisreedio/filament-oauth-clients/compare/4.0.0-beta.1...v4.1.0
+
 ## 4.0.0-beta.1 - 2026-01-05
 
 ### Initial Release
